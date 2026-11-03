@@ -23,6 +23,14 @@ def contar_maiusculas(mensagem: str) -> int:
     Ex.: contar_maiusculas("Oi TUDO bem?") → 5
     """
     # TODO: implemente aqui
+    texto = str(input("Digite o texto: "))
+contador = 0
+
+for caractere in texto:
+  if caractere.isupper():
+    contador += 1
+print("Numero de Letras:  ")
+print(contador)  
     pass
 
 
@@ -34,6 +42,11 @@ def mascarar_cartao(numero: str) -> str:
     Ex.: mascarar_cartao("1234 5678 9012 3456") → "**** **** **** 3456"
     """
     # TODO: implemente aqui
+    numero = str("4569874569874569")
+print(f"Numero do cartao:  {numero}")
+n_mascarado = numero[:-4]
+mascara = '*' * (len(numero) - 4)
+print(f"Numero mascarado: {mascara}{numero[-4:]}")
     pass
 
 
@@ -47,6 +60,18 @@ def nivel_senha(senha: str) -> str:
                          sem número, caractere não permitido...)
     """
     # TODO: implemente aqui
+    print("Crie sua senha: ")
+senha = (input("Digite crie sua senha: "))
+caractere = [ "!" , "#", "*", "@"]
+
+if senha.isalpha():
+  print("Nivel 1")
+elif senha.isalpha() and senha.isalnum():
+  print("Nivel 2")
+elif senha.isalpha() and senha.isalnum() and any(c in caractere for c in senha):
+  print("Nivel 3")
+else:
+  print("Senha inválida")
     pass
 
 
